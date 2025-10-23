@@ -19,6 +19,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -221,4 +223,39 @@ p {
 .col-quarter {
     width: 25%;
     padding-inline: 1rem;
+}
+
+/*TOPBAR STYLING*/
+.socialMediaLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--clr-neutral);
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    border-right: 1px solid var(--clr-main-light);
+    border-left: 1px solid var(--clr-main-light);
+}
+
+.socialMediaLinks i::before {
+    font-size: .875rem;
+}
+
+.topBarSection {
+    background-color: var(--clr-primary);
+}
+
+.topBarFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topBarAddress{
+    font-size: 10px;
+    color: var(--clr-neutral);
+}
+
+.topBarSocialLinks {
+    display: flex;
 }
