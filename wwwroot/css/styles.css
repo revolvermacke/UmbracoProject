@@ -1,0 +1,224 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --clr-neutral: #ffffff;
+    --clr-white: #F2EDDC;
+    --clr-white-100: #F7F7F7;
+    --clr-dark: #0E0E0E;
+    --clr-primary: #4F5955;
+    --clr-main-light: #606966;
+    --clr-accent: #F2EDDC;
+    --clr-secondary: #D9C3A9;
+    --clr-gray-400: #4B5264;
+    --clr-body-text: #535656;
+    --clr-body-text-100: #999999;
+    --clr-note1: #9C9EA6;
+    --clr-border-gray: #EAEAEA;
+    --clr-border-400: #C7C8C9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "poppins", sans-serif;
+}
+
+.rte h3 {
+    font-size: 2.5rem;
+    color: var(--clr-primary);
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: var(--clr-primary);
+    color: white;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    align-self: flex-start;
+    font-weight: 700;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+
+    &&:hover {
+                 background-color: var(--clr-body-text-100);
+             }
+}
+
+/*HERO SECTION*/
+.heroSection {
+    position: relative;
+    padding: 7rem 0rem;
+}
+
+.heroImageContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heroContentContainer {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 80rem;
+    padding-inline: 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.heroContent {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h1 {
+            font-size: 4.5rem;
+            color: var(--clr-primary);
+            font-weight: 700;
+            line-height: 1;
+        }
+}
+
+/*SERVICE SECTION*/
+.services-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: var(--clr-white-100);
+}
+
+.container {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.services-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+    font-size: 1rem;
+    color: var(--clr-secondary);
+    margin: 0;
+    font-weight: 600;
+    }
+}
+
+.services-grid {
+    margin-top: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-inline: 8rem;
+}
+
+.service-card {
+    background-color: var(--clr-neutral);
+    border: 2px solid var(--clr-white-100);
+    width: 100%;
+    min-height: 350px;
+    overflow: hidden;
+
+    h4
+{
+    padding: 1.5rem;
+    font-weight: 600;
+    color: var(--clr-primary);
+    margin: 0;
+}
+p {
+    font-size: 0.875rem;
+    padding: 1.5rem;
+    margin: 0;
+}
+}
+
+.service-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.service-image {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/*ABOUT*/
+.aboutSection {
+    padding: 4rem 0rem;
+    background-color: var(--clr-neutral)
+}
+
+.teamMemberCard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--clr-border-gray)
+
+    img
+{
+    width: 100%;
+    object-fit: cover;
+}
+}
+
+.aboutMember {
+    padding: 4px;
+}
+
+.memberName {
+    font-weight: 700;
+}
+
+.memberRole {
+    color: var(--clr-gray-400);
+}
+
+.aboutMemberContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+           font-size: 1rem;
+           color: var(--clr-secondary);
+           font-weight: 700;
+       }
+}
+
+.renderMembers {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.25rem;
+    padding: 1.25rem 0rem;
+}
+
+.col-third {
+    width: 33.3333%;
+    padding-inline: 1rem;
+}
+
+.col-quarter {
+    width: 25%;
+    padding-inline: 1rem;
+}
