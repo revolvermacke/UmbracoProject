@@ -100,7 +100,6 @@ body {
 .services-section {
     padding-top: 4rem;
     padding-bottom: 4rem;
-    background-color: var(--clr-white-100);
 }
 
 .container {
@@ -307,4 +306,63 @@ p {
     line-height: 1.75rem;
     cursor: pointer;
     color: var(--clr-primary);
+}
+
+/*PAGE HEADER*/
+.pageHeaderSection {
+    background-color: var(--clr-white-100);
+    padding: 4rem 0rem;
+    background-image: url('../images/bgimagepageheader.svg');
+}
+
+.pageHeaderH1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--clr-primary);
+    font-weight: 700;
+}
+
+.pageHeaderBredCrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+    padding-top: .8rem;
+}
+
+.breadCrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    list-style: none;
+}
+
+.breadCrumbLink {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-decoration: none;
+    color: var(--clr-primary);
+
+    &&:hover {
+                color: var(--clr-secondary);
+             }
+             
+}
+
+.angleBreadCrumb {
+    margin-left: .4rem;
+    font-size: 10px;
+    color: var(--clr-primary);
+}
+
+.breadCrumbPTag{
+    font-size: 14px;
+    color: var(--clr-secondary);
+}
+
+.activeBread{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
