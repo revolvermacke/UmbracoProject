@@ -1,0 +1,46 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IPageHeader>
+
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{
+    var selection = Model.Ancestors().ToArray();
+
+    var homePageDisplayName = "Home";
+    var isFirstItem = true;
+}
+
+<section class="pageHeaderSection">
+    <div>
+        <h1 class="pageHeaderH1">@Model.PageTitle</h1>
+        <div class="pageHeaderBredCrumb">
+            @if (selection?.Length > 0)
+            {
+                <ul class="breadCrumb">
+
+                    @foreach (var item in selection.OrderBy(x => x.Level))
+                    {
+                        var displayName = isFirstItem ? homePageDisplayName : item.Name;
+
+                        <li class="activeBread">
+                            <a class="breadCrumbLink" href="@item.Url(PublishedUrlProvider)">@displayName</a>
+                            <i class="fa-solid fa-angle-right angleBreadCrumb"></i>
+                        </li>
+
+                        isFirstItem = false;
+                    }
+
+                    <li>
+                        <p class="breadCrumbPTag">@Model.Name</p>
+                    </li>
+                </ul>
+            }
+        </div>
+    </div>
+
+</section>
