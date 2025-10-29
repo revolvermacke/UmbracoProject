@@ -1,0 +1,27 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetail>
+@{
+	Layout = "mainLayout.cshtml";
+}
+
+<partial name="Partials/Layout/_PageHeader" model="(IPageHeader)Model" />
+
+<section class="serviceDetailSection">
+	<div class="container">
+
+		<div class="infoWidgetContent">
+
+			<aside class="widgetAside">
+				@Html.GetBlockListHtml(Model.ServiceDetailAsides)
+			</aside>
+
+			<div class="serviceBorder"></div>
+
+			<div class="serviceDetailContent">
+				<div>@Html.Raw(Model.ServiceDetailBodyText)</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
