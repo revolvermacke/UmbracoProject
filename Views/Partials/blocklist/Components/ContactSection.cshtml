@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ContactSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ContactSettings;
+
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var sectionColor = settings?.BackgroundColor?.Color ?? "#ffffff";
+    var address = siteSettings?.ContactAddress ?? "No address found.";
+    var phone = siteSettings?.ContactPhone ?? "No phone number found.";
+    var email = siteSettings?.ContactEmail ?? "No email found.";
+
+}
+
+<section style="background-color: @sectionColor">
+    <div class="container">
+        <div class="contactContent">
+
+            @if (content.ContactImage != null)
+            {
+                <img src="@content.ContactImage.Url()" alt="ContactImage" />
+            }
+            <div class="contactInfoContentcontainer">
+
+                <span class="contactLabel">@content.ContactLabel</span>
+
+                <div class="contactInformation">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Office Location</h4>
+                    <p>@address</p>
+                </div>
+
+                <div class="contactInformation">
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>Phone number</h4>
+                    <p>@phone</p>
+                </div>
+
+                <div class="contactInformation">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h4>E-mail address</h4>
+                    <p>@email</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

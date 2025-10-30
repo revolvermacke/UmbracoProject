@@ -443,3 +443,51 @@ p {
     display: flex;
     justify-content: space-between;
 }
+
+/*CONTACT-SECTION*/
+.contactContent {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.contactLabel {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--clr-primary);
+}
+
+.contactInfoContentcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 29rem;
+}
+
+.contactInformation{
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
+    column-gap: .2rem;
+    h4 {
+           color: var(--clr-primary);
+           font-size: 14px;
+           font-weight: 600;
+       }
+
+    p {
+        color: var(--clr-primary);
+        font-style: normal;
+        font-size: 14px;
+    }
+}
+
+.contactInformation i {
+    grid-row: 1 / -1;
+    font-size: 1rem;
+    color: var(--clr-secondary);
+}
+
