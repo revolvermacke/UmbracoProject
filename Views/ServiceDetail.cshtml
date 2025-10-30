@@ -24,4 +24,9 @@
 		</div>
 
 	</div>
+
+	@if (Model.HasValue("sections"))
+	{
+		@Html.GetBlockListHtml(Model, "sections")
+	}
 </section>
