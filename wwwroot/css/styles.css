@@ -522,3 +522,45 @@ p {
 .trustLabel span:last-child {
     color: var(--clr-secondary);
 }
+
+/*REVIEW-SECTION*/
+.reviewSection{
+   position: relative;
+   margin-left: auto;
+   padding-left: 20rem;
+   background-color: var(--clr-white-100);
+}
+
+.reviewText{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: .5rem;
+
+    h4 {
+           color: var(--clr-secondary);
+       }
+
+    h2 {
+        color: var(--clr-primary);
+        font-size: 2.5rem;
+        max-width: 66%;
+    }
+
+    p {
+        width: 66%;
+    }
+
+    img {
+        margin-bottom: 1rem;
+    }
+}
+
+.reviewContent {
+    display: flex;
+    align-items: center;
+}
+
+.reviewImage{
+    min-width: 55.8rem;
+}
