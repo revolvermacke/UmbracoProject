@@ -491,3 +491,34 @@ p {
     color: var(--clr-secondary);
 }
 
+/*TRUST-SECTION*/
+
+.trustContent {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    h3 {
+           max-width: 50%;
+           font-size: 2.5rem;
+           color: var(--clr-primary);
+       }
+
+    p {
+        max-width: 50%;
+        font-size: 1rem;
+        color: var(--clr-primary);
+    }
+
+    img {
+        margin-top: 4rem;
+    }
+}
+
+.trustLabel span:first-child {
+    color: var(--clr-primary);
+}
+.trustLabel span:last-child {
+    color: var(--clr-secondary);
+}
