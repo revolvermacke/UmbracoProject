@@ -643,3 +643,21 @@ figure.success-story .highlight {
     padding-bottom: 3rem;
     gap: 1rem;
 }
+
+/*FOOTER*/
+.footerSection {
+    background-color: #171717;
+}
+
+.footerText {
+    font-size: 14px;
+    padding: 1rem 0rem;
+}
+
+.footerText span:first-child {
+    color: var(--clr-primary);
+}
+
+.footerText span:last-child {
+    color: var(--clr-secondary);
+}
