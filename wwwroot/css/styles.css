@@ -191,7 +191,7 @@ p {
     object-fit: cover;
 }
 
-/*ABOUT*/
+/*ABOUT-SECTION*/
 .aboutSection {
     padding: 4rem 0rem;
     background-color: var(--clr-neutral)
@@ -249,6 +249,27 @@ p {
 .col-quarter {
     width: 25%;
     padding-inline: 1rem;
+}
+
+/*ABOUT-PAGE-STYLE*/
+.aboutPageFlexer {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 4rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.aboutContent p {
+    margin-bottom: 1.35rem;
+}
+
+.aboutWorkerContent {
+    p {
+          font-style: italic;
+          color: var(--clr-primary);
+      }
 }
 
 /*TOPBAR STYLING*/
@@ -504,7 +525,6 @@ p {
 }
 
 /*TRUST-SECTION*/
-
 .trustContent {
     display: grid;
     place-items: center;
