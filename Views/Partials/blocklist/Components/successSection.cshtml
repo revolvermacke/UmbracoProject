@@ -1,0 +1,43 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Extensions
+
+
+@{
+    var content = (ContentModels.SuccessSection)Model.Content;
+
+    var img = content.SuccessImage;
+    var imgUrl = img?.GetCropUrl() ?? string.Empty;
+
+    var stories = content.SuccessStoriesList?
+        .Select(x => x.Content)
+        .OfType<ContentModels.SuccessStories>()
+        .ToList() ?? new List<ContentModels.SuccessStories>();
+}
+
+<section class="success-section">
+
+    <article class="container">
+        <h3 class="highlight">@content.SuccessLabel</h3>
+        <h4>@content.SuccessTitle</h4>
+        <div class="story-container">
+            @for (int i = 0; i < stories.Count && i < 3; i++)
+            {
+                var story = stories[i];
+                <figure class="success-story">
+                    <p class="highlight">@story.SuccessNumber</p>
+                    <figcaption>
+                        <p>@story.SuccessText</p>
+                    </figcaption>
+                </figure>
+            }
+        </div>
+
+        <div class="success-img-container">
+            @if (!string.IsNullOrEmpty(imgUrl))
+            {
+                <img src="@imgUrl" alt="Success image"/>
+            }
+        </div>
+    </article>
+</section>
