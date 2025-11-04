@@ -1,8 +1,22 @@
-﻿<footer class="footerSection">
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core.Models.Blocks
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var siteSettings = Umbraco.ContentAtRoot()
+        .DescendantsOrSelf<SiteSettings>()
+        .FirstOrDefault();
+}
+
+<footer class="footerSection">
     <div class="container">
         <p class="footerText">
-            <span>© Onatrix. All Rights Reserved. Credits to</span>
-            <span>Themesflat</span>
+            @if (siteSettings.FooterText != null)
+            {
+                @siteSettings.FooterText
+            }
+            @* <span>© Onatrix. All Rights Reserved. Credits to</span>
+            <span>Themesflat</span> *@
         </p>
     </div>
 </footer>

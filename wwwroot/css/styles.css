@@ -686,10 +686,6 @@ figure.success-story .highlight {
     padding: 1rem 0rem;
 }
 
-.footerText span:first-child {
+.footerText {
     color: var(--clr-primary);
-}
-
-.footerText span:last-child {
-    color: var(--clr-secondary);
 }
