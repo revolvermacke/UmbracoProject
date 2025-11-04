@@ -1,0 +1,46 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoProjectMax.ViewModels
+@{
+    var content = (ContentModels.AboutCallbackSection)Model.Content;
+    var settings = Model.Settings as ContentModels.AboutCallbackSettings;
+
+    var formViewModel = new CallbackFormViewModel
+    {
+        Options = settings?.CallbackRequestOptions ?? []
+    };
+
+}
+
+<section class="aboutCallbackSection">
+    <div class="container callbackContentFlex">
+
+        <div class="callbackContent">
+            @Html.Raw(content.AboutCallbackSectionBody)
+        </div>
+
+        <div class="callBackForm">
+            <div class="formTitleBg">
+                <p>@content.AboutCallbackFormTitle</p>
+            </div>
+            <p class="inFormText">@content.AboutCallbackFormDescription</p>
+
+            <partial name="Partials/Forms/_CallbackForm" model="formViewModel"/>
+
+            @if (TempData["FormSuccess"] != null)
+            {
+                <div class="responseMessageOK">
+                    @TempData["FormSuccess"]
+                </div>
+            }
+            else if (TempData["FormError"] != null)
+            {
+                <div class="responseMessageError">
+                    @TempData["FormError"]
+                </div>
+            }
+            
+        </div>
+
+    </div>
+</section>
