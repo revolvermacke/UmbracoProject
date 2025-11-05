@@ -33,5 +33,24 @@ namespace UmbracoProjectMax.Controllers
 
             return RedirectToCurrentUmbracoPage();
         }
+
+        public IActionResult HandleSupportRequest(SupportRequestViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return CurrentUmbracoPage();
+            }
+
+            var result = _formSubmissionService.SaveSupportRequest(model);
+            if (!result)
+            {
+                TempData["FormError"] = "Something went wrong. Please try again.";
+                return RedirectToCurrentUmbracoPage();
+            }
+
+            TempData["FormSuccess"] = "Thank you! Your request has been recieved and we will contact you soon.";
+
+            return RedirectToCurrentUmbracoPage();
+        }
     }
 }
