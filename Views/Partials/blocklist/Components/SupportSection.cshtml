@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoProjectMax.ViewModels
+@{
+    var content = (ContentModels.SupportSection)Model.Content;
+
+}
+
+<section class="supportSection">
+    <div class="supportImageMail"></div>
+    <div class="supportRequestForm">
+        <div class="supportContent">
+            <h3>@content.SupportTitle</h3>
+            <p>@content.SupportDescription</p>
+        </div>
+        <partial name="Partials/Forms/_SupportRequestForm" model="new SupportRequestViewModel()" />
+    </div>
+</section>

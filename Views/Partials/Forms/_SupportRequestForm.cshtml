@@ -1,0 +1,13 @@
+﻿@using UmbracoProjectMax.ViewModels
+@model SupportRequestViewModel
+
+@using (Html.BeginUmbracoForm("HandleSupportRequest", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "supportRequest" }))
+{
+
+    <div class="supportInputWrapper">
+        <input asp-for="Email" type="text" placeholder="E-mail address" class="supportInput" />
+        <button type="submit" class="supportBtn"><i class="fa-regular fa-envelope"></i></button>
+    </div>
+    <span asp-validation-for="Email"></span>
+
+}
