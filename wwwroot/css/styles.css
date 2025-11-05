@@ -921,3 +921,61 @@ figure.success-story .highlight {
     align-items: center;
     justify-content: center;
 }
+
+/*QUESTION-REQUEST-SECTION*/
+.questionRequestSection{
+    margin-top: 2rem;
+    h3 {
+           font-size: 1.5rem;
+           color: var(--clr-primary);
+           margin-bottom: 1rem;
+       }
+}
+
+.questionInputContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.questionInput {
+    padding: .8rem;
+    font-style: italic;
+    font-size: 15px;
+    border-radius: .3rem;
+    border: 1px solid var(--clr-border-gray);
+    width: 100%;
+}
+
+.questionInputContainer .questionInput:last-child {
+    height: 150px;
+    grid-column: 1 / -1;
+}
+
+textarea.questionInput {
+    display: block;
+    text-align: left;
+    vertical-align: top;
+    padding-top: 0.8rem;
+    line-height: 1.4;
+    font-family: "poppins", sans-serif;
+}
+
+.questionButton {
+    background-color: var(--clr-primary);
+    color: var(--clr-accent);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    border-radius: .3rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: ease-in-out 250ms;
+    margin-bottom: 5rem;
+
+    &&:hover {
+                 background-color: var(--clr-secondary);
+                 color: var(--clr-primary);
+             }
+}

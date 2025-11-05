@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoProjectMax.ViewModels
+@{
+    var content = (ContentModels.QuestionRequestSection)Model.Content;
+
+}
+
+<section class="questionRequestSection">
+
+    <div class="container">
+        <div>
+            <h3>@content.QuestionRequestLabel</h3>
+        </div>
+
+        <partial name="Partials/Forms/_QuestionForm" model="new QuestionRequestViewModel()"/>
+
+        @if (TempData["FormSuccess"] != null)
+        {
+            <div class="responseMessageOK">
+                @TempData["FormSuccess"]
+            </div>
+        }
+        else if (TempData["FormError"] != null)
+        {
+            <div class="responseMessageError">
+                @TempData["FormError"]
+            </div>
+        }
+    </div>
+  
+</section>

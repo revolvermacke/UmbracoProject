@@ -1,0 +1,23 @@
+﻿@using UmbracoProjectMax.ViewModels
+@model QuestionRequestViewModel
+
+@using (Html.BeginUmbracoForm("HandleQuestionForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "questionRequest" }))
+{
+
+    <div class="questionInputContainer">
+
+        <input asp-for="Name" type="text" placeholder="Name" class="questionInput" />
+            @* <span asp-validation-for="Name"></span> *@
+
+        <input asp-for="Email" type="text" placeholder="Email" class="questionInput" />
+            @* <span asp-validation-for="Email"></span> *@
+
+        <textarea asp-for="Question" type="text" placeholder="Question" class="questionInput"></textarea>
+            @* <span asp-validation-for="Question"></span> *@
+
+    </div>
+
+    <button type="submit" class="questionButton">Submit</button>
+
+
+}

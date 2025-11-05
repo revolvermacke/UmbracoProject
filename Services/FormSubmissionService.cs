@@ -53,4 +53,28 @@ public class FormSubmissionService(IContentService contentService)
             return false;
         }
     }
+
+    public bool SaveQuestionSubmission(QuestionRequestViewModel model)
+    {
+        try
+        {
+            var container = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "formSubmissions");
+            if (container == null)
+                return false;
+
+            var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {model.Name}";
+            var request = _contentService.Create(requestName, container, "questionRequest");
+
+            request.SetValue("questionRequestName", model.Name);
+            request.SetValue("questionRequestEmail", model.Email);
+            request.SetValue("questionRequestQuestion", model.Question);
+
+            var savedResult = _contentService.Save(request);
+            return savedResult.Success;
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
 }
