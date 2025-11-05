@@ -25,6 +25,11 @@
 
 	</div>
 
+	@if (Model.HasValue("questionRequestForm"))
+	{
+		@Html.GetBlockListHtml(Model, "questionRequestForm")
+	}
+
 	@if (Model.HasValue("sections"))
 	{
 		@Html.GetBlockListHtml(Model, "sections")
