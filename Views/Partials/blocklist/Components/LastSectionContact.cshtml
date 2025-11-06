@@ -1,0 +1,37 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoProjectMax.ViewModels
+@{
+	var content = (ContentModels.LastSectionContact)Model.Content;
+	var settings = Model.Settings as ContentModels.AboutCallbackSettings;
+	
+	var formViewModel = new CallbackFormViewModel
+	{
+		Options = settings?.CallbackRequestOptions ?? []
+	};
+}
+
+<section style="background-image: url('/images/map.svg');">
+	<div class="container lastSectionFlex">
+		<div class="nextFormContent">
+			<h4>@content.LastSectionLabel</h4>
+			<h3>@content.LastSectionTitle</h3>
+		</div>
+			<div class="lastSectionFormtext">@Html.Raw(content.LastSectionText)</div>
+
+		<partial name="Partials/Forms/_NextProjectCallbackForm" model="formViewModel"/>
+
+		@if (TempData["FormSuccess"] != null)
+		{
+			<div class="responseMessageOK">
+				@TempData["FormSuccess"]
+			</div>
+		}
+		else if (TempData["FormError"] != null)
+		{
+			<div class="responseMessageError">
+				@TempData["FormError"]
+			</div>
+		}
+	</div>
+</section>

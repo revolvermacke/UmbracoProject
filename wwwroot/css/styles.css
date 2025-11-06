@@ -979,3 +979,107 @@ textarea.questionInput {
                  color: var(--clr-primary);
              }
 }
+
+/*LAST-SECTION-CONTACTPAGE*/
+
+.lastSectionFlex {
+    display: grid;
+    place-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: .2rem;
+    padding: 3rem 0rem;
+    gap: 1rem;
+    transform: translateY(200px);
+}
+
+.nextFormContent {
+    display: grid;
+    place-items: center;
+    max-width: 40%;
+
+    h4 {
+           font-size: .9rem;
+           color: var(--clr-secondary);
+       }
+
+    h3 {
+        font-size: 2.5rem;
+        color: var(--clr-primary);
+        text-align: center;
+    }
+}
+
+.lastSectionFormtext {
+    max-width: 50%;
+}
+
+.NextcallbackFormInput {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 60vw;
+}
+
+.NextcallbackInput {
+    padding: 1rem;
+    border-radius: .2rem;
+    border: 1px solid var(--clr-border-gray);
+    width: 100%;
+
+    &&:focus
+    {
+        outline: none;
+        border-color: var(--clr-primary);
+    }
+}
+
+.submitButtonLast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.form-btn-last {
+    border: none;
+    border-radius: .3rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--clr-accent);
+    background-color: var(--clr-primary);
+    cursor: pointer;
+    transition: ease-in-out 250ms;
+
+    &&:hover {
+                 background-color: var(--clr-accent);
+                 color: var(--clr-primary);
+             }
+}
+
+.optionInFormNext {
+    position: relative;
+    width: 100%;
+}
+
+.selectOptionFormNext {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-radius: .2rem;
+    border: 1px solid var(--clr-border-gray);
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+    appearance: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &&:focus
+    {
+        outline: none;
+        border-color: var(--clr-primary);
+    }
+}
